@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: organizacao-recursos
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/recursos}
+    username: ${DB_USER:recursos}
+    password: ${DB_PASSWORD:recursos}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+
+app:
+  jwt:
+    # Em produção, SEMPRE sobrescrever via variável de ambiente (mínimo 32 bytes)
+    segredo: ${JWT_SECRET:troque-este-segredo-em-producao-0123456789}
+    ttl-minutos: 60
