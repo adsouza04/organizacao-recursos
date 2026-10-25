@@ -1,17 +1,28 @@
 package br.edu.recursos;
 
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 
-/** Base dos testes de integração: PostgreSQL real via Testcontainers (sem mocks de persistência). */
+/**
+ * Base dos testes de integração: PostgreSQL real via Testcontainers (sem mocks de persistência).
+ * O container é um singleton: sobe uma única vez e é compartilhado por todas as classes *IT,
+ * evitando que contextos do Spring em cache apontem para um container já encerrado.
+ */
 @SpringBootTest
-@Testcontainers
 public abstract class BaseIntegracaoPostgres {
 
-    @Container
-    @ServiceConnection
     static final PostgreSQLContainer<?> POSTGRES = new PostgreSQLContainer<>("postgres:16-alpine");
+
+    static {
+        POSTGRES.start();
+    }
+
+    @DynamicPropertySource
+    static void propriedadesDoBanco(DynamicPropertyRegistry registro) {
+        registro.add("spring.datasource.url", POSTGRES::getJdbcUrl);
+        registro.add("spring.datasource.username", POSTGRES::getUsername);
+        registro.add("spring.datasource.password", POSTGRES::getPassword);
+    }
 }

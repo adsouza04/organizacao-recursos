@@ -5,16 +5,26 @@ import br.edu.recursos.excecao.NaoEncontradoException;
 import br.edu.recursos.excecao.RegraDeNegocioException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
-import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+/**
+ * Tratamento global de erros (RFC 7807, ProblemDetail).
+ * Estende ResponseEntityExceptionHandler para que erros do próprio Spring MVC
+ * (UUID malformado, rota inexistente, método não permitido, JSON ilegível)
+ * respondam 400/404/405 e não caiam no handler genérico de 500.
+ */
 @RestControllerAdvice
-public class TratadorGlobalExcecoes {
+public class TratadorGlobalExcecoes extends ResponseEntityExceptionHandler {
 
     private static final Logger LOG = LoggerFactory.getLogger(TratadorGlobalExcecoes.class);
 
@@ -38,9 +48,13 @@ public class TratadorGlobalExcecoes {
         return ProblemDetail.forStatusAndDetail(HttpStatus.FORBIDDEN, e.getMessage());
     }
 
-    @ExceptionHandler({MethodArgumentNotValidException.class, HttpMessageNotReadableException.class})
-    ProblemDetail requisicaoInvalida(Exception e) {
-        return ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, "Requisição inválida");
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
+                                                                  HttpHeaders headers,
+                                                                  HttpStatusCode status,
+                                                                  WebRequest request) {
+        ProblemDetail problema = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, "Requisição inválida");
+        return handleExceptionInternal(ex, problema, headers, HttpStatus.BAD_REQUEST, request);
     }
 
     @ExceptionHandler(Exception.class)
