@@ -1,6 +1,7 @@
 package br.edu.recursos.web;
 
 import br.edu.recursos.excecao.ConflitoException;
+import br.edu.recursos.excecao.CredenciaisInvalidasException;
 import br.edu.recursos.excecao.NaoEncontradoException;
 import br.edu.recursos.excecao.RegraDeNegocioException;
 import org.slf4j.Logger;
@@ -40,6 +41,11 @@ public class TratadorGlobalExcecoes extends ResponseEntityExceptionHandler {
     @ExceptionHandler(AccessDeniedException.class)
     ProblemDetail acessoNegado(AccessDeniedException e) {
         return ProblemDetail.forStatusAndDetail(HttpStatus.FORBIDDEN, e.getMessage());
+    }
+
+    @ExceptionHandler(CredenciaisInvalidasException.class)
+    ProblemDetail credenciaisInvalidas(CredenciaisInvalidasException e) {
+        return ProblemDetail.forStatusAndDetail(HttpStatus.UNAUTHORIZED, e.getMessage());
     }
 
     @Override
