@@ -17,12 +17,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-/**
- * Tratamento global de erros (RFC 7807, ProblemDetail).
- * Estende ResponseEntityExceptionHandler para que erros do próprio Spring MVC
- * (UUID malformado, rota inexistente, método não permitido, JSON ilegível)
- * respondam 400/404/405 e não caiam no handler genérico de 500.
- */
 @RestControllerAdvice
 public class TratadorGlobalExcecoes extends ResponseEntityExceptionHandler {
 

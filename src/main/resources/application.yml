@@ -14,6 +14,5 @@ spring:
 
 app:
   jwt:
-    # Em produção, SEMPRE sobrescrever via variável de ambiente (mínimo 32 bytes)
     segredo: ${JWT_SECRET:troque-este-segredo-em-producao-0123456789}
     ttl-minutos: 60

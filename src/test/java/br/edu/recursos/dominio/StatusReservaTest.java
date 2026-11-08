@@ -12,7 +12,6 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
-/** Testes unitários (sem mocks, sem Spring) da máquina de estados e do período (RN-01). */
 class StatusReservaTest {
 
     static Stream<Arguments> transicoesValidas() {

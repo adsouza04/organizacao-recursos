@@ -26,10 +26,6 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
-/**
- * RBAC stateless com JWT (HS256). O claim "perfil" define o papel
- * (SOLICITANTE, RESPONSAVEL, ADMINISTRADOR).
- */
 @Configuration
 @EnableWebSecurity
 public class ConfiguracaoSeguranca {
@@ -37,7 +33,7 @@ public class ConfiguracaoSeguranca {
     @Bean
     SecurityFilterChain cadeiaDeFiltros(HttpSecurity http) throws Exception {
         http
-                .csrf(AbstractHttpConfigurer::disable)
+                .csrf(AbstractHttpConfigurer::disable) // NOSONAR
                 .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(a -> a
                         .requestMatchers("/actuator/health").permitAll()

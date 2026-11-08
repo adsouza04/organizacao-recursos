@@ -31,10 +31,7 @@ import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
-/**
- * Testes de API ponta a ponta: JWT real (assinado e validado pelos beans da aplicação),
- * RBAC, validação, tratamento de erros e auditoria, sobre PostgreSQL real.
- */
+
 @AutoConfigureMockMvc
 class ReservaApiIT extends BaseIntegracaoPostgres {
 

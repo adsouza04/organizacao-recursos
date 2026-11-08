@@ -11,7 +11,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface RecursoRepositorio extends JpaRepository<Recurso, UUID> {
 
-    /** SELECT ... FOR UPDATE: serializa reservas concorrentes do mesmo recurso. */
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("select r from Recurso r where r.id = :id")
     Optional<Recurso> buscarPorIdComBloqueio(@Param("id") UUID id);

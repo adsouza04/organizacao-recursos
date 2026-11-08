@@ -22,7 +22,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-/** RN-03: requisições simultâneas ao mesmo recurso/período geram exatamente UMA reserva. */
 class ReservaConcorrenciaIT extends BaseIntegracaoPostgres {
 
     private static final int THREADS = 12;
