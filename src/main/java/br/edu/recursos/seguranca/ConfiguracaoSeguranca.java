@@ -17,6 +17,8 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
@@ -37,6 +39,7 @@ public class ConfiguracaoSeguranca {
                 .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(a -> a
                         .requestMatchers("/actuator/health").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/reservas")
                         .hasAnyRole("SOLICITANTE", "ADMINISTRADOR")
                         .requestMatchers(HttpMethod.GET, "/api/reservas/**")
@@ -81,5 +84,10 @@ public class ConfiguracaoSeguranca {
     @Bean
     JwtEncoder codificadorJwt(SecretKey chaveJwt) {
         return new NimbusJwtEncoder(new ImmutableSecret<>(chaveJwt));
+    }
+
+    @Bean
+    PasswordEncoder codificadorSenha() {
+        return new BCryptPasswordEncoder();
     }
 }
