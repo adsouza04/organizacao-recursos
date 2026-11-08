@@ -16,3 +16,6 @@ app:
   jwt:
     segredo: ${JWT_SECRET:troque-este-segredo-em-producao-0123456789}
     ttl-minutos: 60
+  notificacao:
+    url: ${NOTIFICACAO_URL:http://localhost:8089}
+    timeout-ms: 2000

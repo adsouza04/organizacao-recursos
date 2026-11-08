@@ -1,6 +1,7 @@
 package br.edu.recursos.web;
 
 import br.edu.recursos.dominio.Perfil;
+import br.edu.recursos.integracao.NotificacaoCliente;
 import br.edu.recursos.servico.Ator;
 import br.edu.recursos.servico.ReservaServico;
 import jakarta.validation.Valid;
@@ -22,9 +23,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class ReservaControlador {
 
     private final ReservaServico servico;
+    private final NotificacaoCliente notificacao;
 
-    public ReservaControlador(ReservaServico servico) {
+    public ReservaControlador(ReservaServico servico, NotificacaoCliente notificacao) {
         this.servico = servico;
+        this.notificacao = notificacao;
     }
 
     @PostMapping
@@ -42,12 +45,12 @@ public class ReservaControlador {
 
     @PostMapping("/{id}/aprovar")
     public ReservaResposta aprovar(@PathVariable UUID id, Authentication autenticacao) {
-        return ReservaResposta.de(servico.aprovar(id, ator(autenticacao)));
+        return notificar(ReservaResposta.de(servico.aprovar(id, ator(autenticacao))));
     }
 
     @PostMapping("/{id}/rejeitar")
     public ReservaResposta rejeitar(@PathVariable UUID id, Authentication autenticacao) {
-        return ReservaResposta.de(servico.rejeitar(id, ator(autenticacao)));
+        return notificar(ReservaResposta.de(servico.rejeitar(id, ator(autenticacao))));
     }
 
     @PostMapping("/{id}/iniciar")
@@ -74,6 +77,11 @@ public class ReservaControlador {
     public ResponseEntity<Void> excluir(@PathVariable UUID id, Authentication autenticacao) {
         servico.excluir(id, ator(autenticacao));
         return ResponseEntity.noContent().build();
+    }
+
+    private ReservaResposta notificar(ReservaResposta decisao) {
+        notificacao.notificarDecisao(decisao.solicitante(), decisao.id(), decisao.recursoId(), decisao.status());
+        return decisao;
     }
 
     private static Ator ator(Authentication autenticacao) {
