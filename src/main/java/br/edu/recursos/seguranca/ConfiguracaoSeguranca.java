@@ -40,6 +40,8 @@ public class ConfiguracaoSeguranca {
                 .authorizeHttpRequests(a -> a
                         .requestMatchers("/actuator/health").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/recursos/**").authenticated()
+                        .requestMatchers("/api/recursos/**").hasRole("ADMINISTRADOR")
                         .requestMatchers(HttpMethod.POST, "/api/reservas")
                         .hasAnyRole("SOLICITANTE", "ADMINISTRADOR")
                         .requestMatchers(HttpMethod.GET, "/api/reservas/**")
