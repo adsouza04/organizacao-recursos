@@ -33,12 +33,6 @@ public class ReservaServico {
         this.auditoria = auditoria;
     }
 
-    /**
-     * Política de concorrência em 3 camadas:
-     * 1) lock pessimista na linha do recurso (serializa quem disputa o mesmo recurso);
-     * 2) verificação de sobreposição dentro do lock;
-     * 3) constraint de exclusão (gist) no PostgreSQL como rede de segurança final.
-     */
     @Transactional
     public Reserva criar(UUID recursoId, Instant inicio, Instant fim, Ator ator) {
         Reserva.validarPeriodo(inicio, fim);
@@ -105,7 +99,6 @@ public class ReservaServico {
         return transicionar(reserva, StatusReserva.CANCELADA, ator);
     }
 
-    /** RN-06: reservas EM_USO ou CONCLUIDA não podem ser apagadas. */
     @Transactional
     public void excluir(UUID id, Ator ator) {
         Reserva reserva = localizar(id);

@@ -10,7 +10,6 @@ import java.time.Instant;
 import java.util.UUID;
 import org.hibernate.annotations.Immutable;
 
-/** Registro de auditoria (RN-07): imutável na aplicação (@Immutable) e no banco (trigger). */
 @Entity
 @Immutable
 @Table(name = "registro_auditoria")

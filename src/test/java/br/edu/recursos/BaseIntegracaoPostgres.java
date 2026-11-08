@@ -5,11 +5,7 @@ import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.PostgreSQLContainer;
 
-/**
- * Base dos testes de integração: PostgreSQL real via Testcontainers (sem mocks de persistência).
- * O container é um singleton: sobe uma única vez e é compartilhado por todas as classes *IT,
- * evitando que contextos do Spring em cache apontem para um container já encerrado.
- */
+
 @SpringBootTest
 public abstract class BaseIntegracaoPostgres {
 

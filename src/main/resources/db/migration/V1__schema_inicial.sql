@@ -18,9 +18,7 @@ CREATE TABLE reserva (
     status      VARCHAR(20)  NOT NULL,
     versao      BIGINT       NOT NULL DEFAULT 0,
     criado_em   TIMESTAMPTZ  NOT NULL,
-    -- RN-01: término estritamente posterior ao início
     CONSTRAINT ck_reserva_periodo CHECK (fim_em > inicio_em),
-    -- RN-02/RN-03: última linha de defesa contra sobreposição e dupla reserva
     CONSTRAINT ex_reserva_sem_sobreposicao EXCLUDE USING gist (
         recurso_id WITH =,
         tstzrange(inicio_em, fim_em, '[)') WITH &&
@@ -29,7 +27,6 @@ CREATE TABLE reserva (
 
 CREATE INDEX ix_reserva_recurso ON reserva (recurso_id, inicio_em);
 
--- RN-06: reservas iniciadas não podem ser apagadas (defesa em profundidade)
 CREATE FUNCTION reserva_bloquear_exclusao() RETURNS trigger AS $$
 BEGIN
     IF OLD.status IN ('EM_USO', 'CONCLUIDA') THEN
@@ -43,7 +40,6 @@ CREATE TRIGGER trg_reserva_bloquear_exclusao
     BEFORE DELETE ON reserva
     FOR EACH ROW EXECUTE FUNCTION reserva_bloquear_exclusao();
 
--- RN-07: auditoria imutável (sem FK de propósito: o histórico sobrevive à reserva)
 CREATE TABLE registro_auditoria (
     id              UUID PRIMARY KEY,
     reserva_id      UUID         NOT NULL,
