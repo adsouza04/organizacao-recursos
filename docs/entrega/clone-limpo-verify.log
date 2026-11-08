@@ -1,0 +1,290 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< br.edu.recursos:organizacao-recursos >----------------
+[INFO] Building OrganizaþÒo de Recursos 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (prepare-agent) @ organizacao-recursos ---
+[INFO] argLine set to "-javaagent:C:\\Users\\Yasmin Souza\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.12\\org.jacoco.agent-0.8.12-runtime.jar=destfile=C:\\entrega-clone\\target\\jacoco.exec"
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ organizacao-recursos ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ organizacao-recursos ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ organizacao-recursos ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ organizacao-recursos ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ organizacao-recursos ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running br.edu.recursos.dominio.RecursoTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.857 s -- in br.edu.recursos.dominio.RecursoTest
+[INFO] Running br.edu.recursos.dominio.StatusReservaTest
+[INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.267 s -- in br.edu.recursos.dominio.StatusReservaTest
+[INFO] Running br.edu.recursos.web.TratadorGlobalExcecoesTest
+18:43:54.028 [main] ERROR br.edu.recursos.web.TratadorGlobalExcecoes -- Erro inesperado
+java.lang.IllegalStateException: segredo interno
+	at br.edu.recursos.web.TratadorGlobalExcecoesTest.erroInesperadoResponde500SemVazarDetalhes(TratadorGlobalExcecoesTest.java:13)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.659 s -- in br.edu.recursos.web.TratadorGlobalExcecoesTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 34, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ organizacao-recursos ---
+[INFO] 
+[INFO] --- spring-boot:3.3.5:repackage (repackage) @ organizacao-recursos ---
+[INFO] Replacing main artifact C:\entrega-clone\target\organizacao-recursos-1.0.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to C:\entrega-clone\target\organizacao-recursos-1.0.0-SNAPSHOT.jar.original
+[INFO] 
+[INFO] --- failsafe:3.2.5:integration-test (default) @ organizacao-recursos ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running br.edu.recursos.servico.ReservaConcorrenciaIT
+18:43:59.357 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.edu.recursos.servico.ReservaConcorrenciaIT]: ReservaConcorrenciaIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:44:00.131 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.edu.recursos.AplicacaoRecursos for test class br.edu.recursos.servico.ReservaConcorrenciaIT
+18:44:00.709 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+18:44:00.719 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+18:44:02.075 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+18:44:03.226 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+18:44:03.229 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+18:44:03.284 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.9.2
+  API Version: 1.56
+  Operating System: Docker Desktop
+  Total Memory: 2911 MB
+18:44:03.614 [main] INFO tc.testcontainers/ryuk:0.7.0 -- Creating container for image: testcontainers/ryuk:0.7.0
+18:44:04.082 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+18:44:04.462 [main] INFO tc.testcontainers/ryuk:0.7.0 -- Container testcontainers/ryuk:0.7.0 is starting: 86a1f556f697269f93fd69939186a9ff4799db3829e246563c3558ce5c1b811e
+18:44:05.514 [main] INFO tc.testcontainers/ryuk:0.7.0 -- Container testcontainers/ryuk:0.7.0 started in PT1.9004463S
+18:44:05.529 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+18:44:05.529 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+18:44:05.531 [main] INFO org.testcontainers.DockerClientFactory -- ?? Docker server version should be at least 1.6.0
+18:44:05.531 [main] INFO tc.postgres:16-alpine -- Creating container for image: postgres:16-alpine
+18:44:05.728 [main] INFO tc.postgres:16-alpine -- Container postgres:16-alpine is starting: 1513a30b23a9f157c9b83b849fcca6c6c55fdab633672845421dafac6e4769e6
+18:44:10.428 [main] INFO tc.postgres:16-alpine -- Container postgres:16-alpine started in PT4.8969641S
+18:44:10.431 [main] INFO tc.postgres:16-alpine -- Container is started (JDBC URL: jdbc:postgresql://localhost:53308/test?loggerLevel=OFF)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2026-11-08T18:44:11.635-03:00  INFO 13628 --- [organizacao-recursos] [           main] b.e.r.servico.ReservaConcorrenciaIT      : Starting ReservaConcorrenciaIT using Java 21.0.12.1 with PID 13628 (started by Yasmin Souza in C:\entrega-clone)
+2026-11-08T18:44:11.639-03:00  INFO 13628 --- [organizacao-recursos] [           main] b.e.r.servico.ReservaConcorrenciaIT      : No active profile set, falling back to 1 default profile: "default"
+2026-11-08T18:44:13.914-03:00  INFO 13628 --- [organizacao-recursos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-08T18:44:14.081-03:00  INFO 13628 --- [organizacao-recursos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 142 ms. Found 4 JPA repository interfaces.
+2026-11-08T18:44:15.634-03:00  INFO 13628 --- [organizacao-recursos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-08T18:44:16.123-03:00  INFO 13628 --- [organizacao-recursos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4e6a75a3
+2026-11-08T18:44:16.127-03:00  INFO 13628 --- [organizacao-recursos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-08T18:44:16.194-03:00  INFO 13628 --- [organizacao-recursos] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:53308/test (PostgreSQL 16.15)
+2026-11-08T18:44:16.405-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-11-08T18:44:16.415-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.116s)
+2026-11-08T18:44:16.484-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-11-08T18:44:16.631-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-11-08T18:44:16.666-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - schema inicial"
+2026-11-08T18:44:16.891-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "2 - usuario"
+2026-11-08T18:44:16.948-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "public", now at version v2 (execution time 00:00.203s)
+2026-11-08T18:44:17.239-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-08T18:44:17.467-03:00  INFO 13628 --- [organizacao-recursos] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-11-08T18:44:17.562-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-08T18:44:18.610-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-08T18:44:21.673-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-08T18:44:21.678-03:00  INFO 13628 --- [organizacao-recursos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-08T18:44:22.872-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-08T18:44:25.592-03:00  INFO 13628 --- [organizacao-recursos] [           main] b.e.r.servico.ReservaConcorrenciaIT      : Started ReservaConcorrenciaIT in 15.011 seconds (process running for 29.035)
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 29.18 s -- in br.edu.recursos.servico.ReservaConcorrenciaIT
+[INFO] Running br.edu.recursos.web.AutenticacaoApiIT
+2026-11-08T18:44:27.751-03:00  INFO 13628 --- [organizacao-recursos] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.recursos.web.AutenticacaoApiIT]: AutenticacaoApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-08T18:44:27.796-03:00  INFO 13628 --- [organizacao-recursos] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.recursos.AplicacaoRecursos for test class br.edu.recursos.web.AutenticacaoApiIT
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2026-11-08T18:44:27.930-03:00  INFO 13628 --- [organizacao-recursos] [           main] br.edu.recursos.web.AutenticacaoApiIT    : Starting AutenticacaoApiIT using Java 21.0.12.1 with PID 13628 (started by Yasmin Souza in C:\entrega-clone)
+2026-11-08T18:44:27.931-03:00  INFO 13628 --- [organizacao-recursos] [           main] br.edu.recursos.web.AutenticacaoApiIT    : No active profile set, falling back to 1 default profile: "default"
+2026-11-08T18:44:28.353-03:00  INFO 13628 --- [organizacao-recursos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-08T18:44:28.377-03:00  INFO 13628 --- [organizacao-recursos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 4 JPA repository interfaces.
+2026-11-08T18:44:28.561-03:00  INFO 13628 --- [organizacao-recursos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-11-08T18:44:28.588-03:00  INFO 13628 --- [organizacao-recursos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@16bc5e98
+2026-11-08T18:44:28.588-03:00  INFO 13628 --- [organizacao-recursos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-11-08T18:44:28.593-03:00  INFO 13628 --- [organizacao-recursos] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:53308/test (PostgreSQL 16.15)
+2026-11-08T18:44:28.627-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.016s)
+2026-11-08T18:44:28.670-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2026-11-08T18:44:28.677-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-11-08T18:44:28.730-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-08T18:44:28.735-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-08T18:44:28.754-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-08T18:44:29.059-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-08T18:44:29.060-03:00  INFO 13628 --- [organizacao-recursos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-08T18:44:29.741-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-08T18:44:29.742-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-08T18:44:29.743-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-08T18:44:29.758-03:00  INFO 13628 --- [organizacao-recursos] [           main] br.edu.recursos.web.AutenticacaoApiIT    : Started AutenticacaoApiIT in 1.951 seconds (process running for 33.202)
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.765 s -- in br.edu.recursos.web.AutenticacaoApiIT
+[INFO] Running br.edu.recursos.web.NotificacaoWireMockIT
+2026-11-08T18:44:31.615-03:00  INFO 13628 --- [organizacao-recursos] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.recursos.web.NotificacaoWireMockIT]: NotificacaoWireMockIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-08T18:44:31.623-03:00  INFO 13628 --- [organizacao-recursos] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.recursos.AplicacaoRecursos for test class br.edu.recursos.web.NotificacaoWireMockIT
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2026-11-08T18:44:33.961-03:00  INFO 13628 --- [organizacao-recursos] [           main] b.e.recursos.web.NotificacaoWireMockIT   : Starting NotificacaoWireMockIT using Java 21.0.12.1 with PID 13628 (started by Yasmin Souza in C:\entrega-clone)
+2026-11-08T18:44:33.961-03:00  INFO 13628 --- [organizacao-recursos] [           main] b.e.recursos.web.NotificacaoWireMockIT   : No active profile set, falling back to 1 default profile: "default"
+2026-11-08T18:44:34.298-03:00  INFO 13628 --- [organizacao-recursos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-08T18:44:34.321-03:00  INFO 13628 --- [organizacao-recursos] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 4 JPA repository interfaces.
+2026-11-08T18:44:34.434-03:00  INFO 13628 --- [organizacao-recursos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-11-08T18:44:34.469-03:00  INFO 13628 --- [organizacao-recursos] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@3fb72121
+2026-11-08T18:44:34.470-03:00  INFO 13628 --- [organizacao-recursos] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-11-08T18:44:34.474-03:00  INFO 13628 --- [organizacao-recursos] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:53308/test (PostgreSQL 16.15)
+2026-11-08T18:44:34.509-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.011s)
+2026-11-08T18:44:34.540-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2026-11-08T18:44:34.542-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-11-08T18:44:34.600-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-08T18:44:34.606-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-08T18:44:34.629-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-08T18:44:34.965-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-08T18:44:34.966-03:00  INFO 13628 --- [organizacao-recursos] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-08T18:44:35.337-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-08T18:44:35.338-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-08T18:44:35.339-03:00  INFO 13628 --- [organizacao-recursos] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-08T18:44:35.348-03:00  INFO 13628 --- [organizacao-recursos] [           main] b.e.recursos.web.NotificacaoWireMockIT   : Started NotificacaoWireMockIT in 1.417 seconds (process running for 38.792)
+2026-11-08T18:44:37.541-03:00  WARN 13628 --- [organizacao-recursos] [           main] b.e.r.integracao.NotificacaoCliente      : Falha ao notificar a reserva 217e92ca-5b0c-4678-a1cc-39cbfbbcb9de: 503 Service Unavailable: [no body]
+2026-11-08T18:44:40.087-03:00  WARN 13628 --- [organizacao-recursos] [           main] b.e.r.integracao.NotificacaoCliente      : Falha ao notificar a reserva 5843f87a-4e53-477f-81e8-a7146189b67c: Could not retrieve response status code: java.net.SocketTimeoutException: Read timed out
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.014 s -- in br.edu.recursos.web.NotificacaoWireMockIT
+[INFO] Running br.edu.recursos.web.RecursoApiIT
+2026-11-08T18:44:40.632-03:00  INFO 13628 --- [organizacao-recursos] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.recursos.web.RecursoApiIT]: RecursoApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-08T18:44:40.649-03:00  INFO 13628 --- [organizacao-recursos] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.recursos.AplicacaoRecursos for test class br.edu.recursos.web.RecursoApiIT
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.094 s -- in br.edu.recursos.web.RecursoApiIT
+[INFO] Running br.edu.recursos.web.ReservaApiIT
+2026-11-08T18:44:41.729-03:00  INFO 13628 --- [organizacao-recursos] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.edu.recursos.web.ReservaApiIT]: ReservaApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-08T18:44:41.742-03:00  INFO 13628 --- [organizacao-recursos] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.edu.recursos.AplicacaoRecursos for test class br.edu.recursos.web.ReservaApiIT
+2026-11-08T18:44:41.957-03:00  WARN 13628 --- [organizacao-recursos] [           main] b.e.r.integracao.NotificacaoCliente      : Falha ao notificar a reserva 8f6e577b-eff4-4822-a4a7-b4c129fa93ed: I/O error on POST request for "http://localhost:8089/notificacoes": Connection refused: getsockopt
+2026-11-08T18:44:42.078-03:00  WARN 13628 --- [organizacao-recursos] [           main] b.e.r.integracao.NotificacaoCliente      : Falha ao notificar a reserva c1a4e787-92bc-4069-9c64-5b62902aa6e1: I/O error on POST request for "http://localhost:8089/notificacoes": Connection refused: getsockopt
+2026-11-08T18:44:42.320-03:00  WARN 13628 --- [organizacao-recursos] [           main] b.e.r.integracao.NotificacaoCliente      : Falha ao notificar a reserva 698b7a1e-b8da-4071-b260-4a19300c0785: I/O error on POST request for "http://localhost:8089/notificacoes": Connection refused: getsockopt
+2026-11-08T18:44:42.337-03:00  WARN 13628 --- [organizacao-recursos] [           main] o.s.web.servlet.PageNotFound             : Request method 'POST' is not supported
+2026-11-08T18:44:42.647-03:00  WARN 13628 --- [organizacao-recursos] [           main] b.e.r.integracao.NotificacaoCliente      : Falha ao notificar a reserva d81fabf7-b14c-4217-aec3-930eba5abb99: I/O error on POST request for "http://localhost:8089/notificacoes": Connection refused: getsockopt
+2026-11-08T18:44:42.782-03:00  WARN 13628 --- [organizacao-recursos] [           main] b.e.r.integracao.NotificacaoCliente      : Falha ao notificar a reserva ab42ca7e-8f3d-49d9-933f-72d654f2efb1: I/O error on POST request for "http://localhost:8089/notificacoes": Connection refused: getsockopt
+2026-11-08T18:44:42.985-03:00  WARN 13628 --- [organizacao-recursos] [           main] b.e.r.integracao.NotificacaoCliente      : Falha ao notificar a reserva 01b8f6f7-2b32-4166-a194-8be1d6c6807b: I/O error on POST request for "http://localhost:8089/notificacoes": Connection refused: getsockopt
+[INFO] Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.328 s -- in br.edu.recursos.web.ReservaApiIT
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 49, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- failsafe:3.2.5:verify (default) @ organizacao-recursos ---
+[INFO] 
+[INFO] --- jacoco:0.8.12:report (report) @ organizacao-recursos ---
+[INFO] Loading execution data file C:\entrega-clone\target\jacoco.exec
+[INFO] Analyzed bundle 'OrganizaþÒo de Recursos' with 32 classes
+[INFO] 
+[INFO] --- jacoco:0.8.12:check (check) @ organizacao-recursos ---
+[INFO] Loading execution data file C:\entrega-clone\target\jacoco.exec
+[INFO] Analyzed bundle 'organizacao-recursos' with 32 classes
+[INFO] All coverage checks have been met.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  59.397 s
+[INFO] Finished at: 2026-11-08T18:44:45-03:00
+[INFO] ------------------------------------------------------------------------
