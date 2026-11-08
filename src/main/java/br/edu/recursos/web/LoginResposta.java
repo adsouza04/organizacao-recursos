@@ -1,7 +1,7 @@
 package br.edu.recursos.web;
 
 import br.edu.recursos.dominio.Perfil;
-import br.edu.recursos.servico.AutenticacaoServico.TokenEmitido;
+import br.edu.recursos.seguranca.TokenEmitido;
 
 public record LoginResposta(String token, String tipo, long expiraEmSegundos, Perfil perfil) {
 
